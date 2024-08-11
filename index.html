@@ -16,7 +16,6 @@
   <script src="./scripts/scripts.js"></script>
   <script src="./scripts/sortfunc.js"></script>
   <script src="./scripts/library.js"></script>
-  <script src="./scripts/consts.js"></script>
   <script>
     document.onkeydown = function (event) {
       switch (event.keyCode) {
@@ -47,13 +46,13 @@
       </thead>
       <tbody>
         <tr>
-          <td id="leftField" onClick="sortList(-1)" rowspan="2">Arval</td>
+          <td id="leftField" onClick="sortList(-1)" rowspan="2">Game Left</td>
           <td style="border: 0px; width: 7px;" rowspan="2"></td>
           <td id="fldMiddleT" onClick="sortList(0);">
             <p>Read <br>Instructions<br> Below</p>
           </td>
           <td style="border: 0px; width: 7px;" rowspan="2"></td>
-          <td id="rightField" onClick="sortList(1);" rowspan="2">Sothis</td>
+          <td id="rightField" onClick="sortList(1);" rowspan="2">Game Right</td>
         </tr>
         <tr>
           <td id="fldMiddleB" onClick="undo();"> Click to Start!</p>

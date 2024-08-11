@@ -295,8 +295,6 @@ function showImage() {
   portraitTag2 != "" ? portraitTag2 = '_' + portraitTag2 : portraitTag2 += "";
   
   document.getElementById("lblProgress").innerHTML = str0;
-  document.getElementById("leftField").style.backgroundImage = `url('./portraits/${charlist[index1]}${portraitTag1}.png'), url('./other_assets/frame.png')`;
-  document.getElementById("rightField").style.backgroundImage = `url('./portraits/${charlist[index2]}${portraitTag2}.png'), url('./other_assets/frame.png')`;
   document.getElementById("leftField").innerHTML = str1;
   document.getElementById("rightField").innerHTML = str2;
   numQuestion++;

@@ -1,5 +1,4 @@
 let charlist = []
-let games = []
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -38,17 +37,6 @@ document.body.removeChild(link);
 
 }
 
-function toggleCollapsible(id) {
-  let el = document.getElementById(id);
-  el.classList.toggle("active");
-  var content = el.nextElementSibling;
-  if (content.style.maxHeight) {
-    content.style.maxHeight = null;
-  } else {
-    content.style.maxHeight = content.scrollHeight + "px";
-  }
-}
-
 function startup() {
   document.getElementById('topTen').style.display = 'none';
   document.getElementById('resultcontainer').style.display = 'none';
@@ -61,20 +49,6 @@ function reset() {
   }
 }
 
-function portraitChoice(id1, id2, id3) {
-  let cbox1 = document.getElementById(id1)
-  if (cbox1.checked == false) {
-    cbox1.checked = true
-    return;
-  }
-  let cbox2 = document.getElementById(id2)
-  cbox2.checked = !cbox1.checked;
-  if (id3 != undefined) {
-    let cbox3 = document.getElementById(id3)
-    cbox3.checked = cbox2.checked
-  }
-}
-
 function hideAll() {
   document.getElementById('resumeButton').style.display = 'none';
 }
@@ -84,13 +58,8 @@ async function initialize() {
       return;
     }
   }
-  charlist = [];
   let keys = await Object.keys(library)
-  for (let i = 0; i < titlesArr.length; i++) {
-      games.push(titlesArr[i])
-      charlist = charlist.concat(keys.filter(key => library[key].origin.includes(titlesArr[i])))
-  }
-  this.applyFilters();
+  charlist = charlist.concat(keys)
   if (charlist.length < 2) {
     window.alert('You need to select more than 2 characters.')
     return;
@@ -98,17 +67,4 @@ async function initialize() {
   this.hideAll()
   this.start();
   document.getElementById('fldMiddleB').setAttribute("onClick", "undo()");
-}
-
-function portraitTagSelect(tag) {
-  for (let i = 0; i < charlist.length; i++) {
-    if (library[charlist[i]].tags.includes(tag)) {
-      library[charlist[i]].portrait = tag;
-    }
-  }
-}
-
-function applyFilters() {
-    charlist = this.shuffle(charlist)
-  charlist = [...new Set(charlist)];
 }

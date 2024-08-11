@@ -15,7 +15,7 @@ let library = {
      
     ]
   },
-"bantu": {
+  "bantu": {
     "display": "Bantu",
     "displayTitle": "Shadow Dragon / New Mystery",
     "origin": [

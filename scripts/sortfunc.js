@@ -259,6 +259,7 @@ function showResult() {
   str += "<\/table>";
   document.getElementById("resultField").innerHTML = str;
   document.getElementById("mainTable").style.display = 'none';
+  document.getElementById('resultcontainer').style.display = 'block';
 }
 
 

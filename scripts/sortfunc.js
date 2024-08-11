@@ -263,7 +263,7 @@ function showResult() {
     final_rank.push(ranking)
     let portraitTag1 = library[charlist[lstMember[0][i]]].portrait
         portraitTag1 != "" ? portraitTag1 = '_' + portraitTag1 : portraitTag1 += "";
-    str += "<tr><td id= \"rightCol\">" + ranking + "<\/td><td id= \"leftCol\" style=\"background:url(\'./portraits/" + charlist[lstMember[0][i]] + portraitTag1 + ".png\') 3% center/75px 75px no-repeat !important; margin-left:3px;\">" + library[charlist[lstMember[0][i]]].display + "<\/td><\/tr>";
+    str += "<tr><td id= \"rightCol\">" + ranking + "<\/td><td id= \"leftCol\" style=\"3% center/75px 75px no-repeat !important; margin-left:3px;\">" + library[charlist[lstMember[0][i]]].display + "<\/td><\/tr>";
     resultstr += `${ranking}: ${library[charlist[lstMember[0][i]]].display}\n`
     if (i < charlist.length - 1) {
       if (equal[lstMember[0][i]] == lstMember[0][i + 1]) {

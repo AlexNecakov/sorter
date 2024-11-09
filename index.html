@@ -5,85 +5,85 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="icon" href="other_assets/icon.png">
 
 <head>
- <title>Sorter</title>
+    <title>Sorter</title>
 </head>
 
 <body onLoad="startup();">
-  <script src="./scripts/scripts.js"></script>
-  <script src="./scripts/sortfunc.js"></script>
-  <script src="./scripts/library.js"></script>
-  <script>
-    document.onkeydown = function (event) {
-      switch (event.keyCode) {
-         case 37:
-            sortList(-1)
-            break;
-         case 38:
-            sortList(0);
-            break;
-         case 39:
-            sortList(1);
-            break;
-         case 40:
-            undo();
-            break;
-      }
-   };
-</script>
-  <div align="center">
-    <table id="mainTable">
-      <thead>
-        <tr>
-          <td colspan="9" class="tb_header"><span id="lblCount"></span><br>
-            <span id="lblProgress">Battle #0 <br>0% sorted</span><br>
-            <div align="center"><span id="GaGprog"></span></div>
-          </td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td id="leftField" onClick="sortList(-1)" rowspan="2">Game Left</td>
-          <td style="border: 0px; width: 7px;" rowspan="2"></td>
-          <td id="fldMiddleT" onClick="sortList(0);"></td>
-          <td style="border: 0px; width: 7px;" rowspan="2"></td>
-          <td id="rightField" onClick="sortList(1);" rowspan="2">Game Right</td>
-        </tr>
-        <tr>
-          <td id="fldMiddleB" onClick="undo();"> Click to Start!</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div id='resultcontainer'>
+    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/sortfunc.js"></script>
+    <script src="./scripts/library.js"></script>
+    <script>
+        document.onkeydown = function (event) {
+            switch (event.keyCode) {
+                case 37:
+                    sortList(-1)
+                    break;
+                case 38:
+                    sortList(0);
+                    break;
+                case 39:
+                    sortList(1);
+                    break;
+                case 40:
+                    undo();
+                    break;
+            }
+        };
+    </script>
+    <div align="center">
+        <table id="mainTable">
+            <thead>
+                <tr>
+                    <td colspan="9" class="tb_header"><span id="lblCount"></span><br>
+                        <span id="lblProgress">Battle #0 <br>0% sorted</span><br>
+                        <div align="center"><span id="GaGprog"></span></div>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="leftField" onClick="sortList(-1)" rowspan="2">Game Left</td>
+                    <td style="border: 0px; width: 7px;" rowspan="2"></td>
+                    <td id="fldMiddleT" onClick="sortList(0);"></td>
+                    <td style="border: 0px; width: 7px;" rowspan="2"></td>
+                    <td id="rightField" onClick="sortList(1);" rowspan="2">Game Right</td>
+                </tr>
+                <tr>
+                    <td id="fldMiddleB" onClick="undo();"> Click to Start!</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id='resultcontainer'>
+        <table id="buttonsTable" align="center" width="450" height='200'>
+            <tbody>
+                <tr id="buttonRow0">
+                    <td id='txtButton' onclick='downloadTxt()'>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="style4" id="resultField" style="text-align:center;">
+    </div>
     <table id="buttonsTable" align="center" width="450" height='200'>
-      <tbody>
-        <tr id="buttonRow0">
-          <td id='txtButton' onclick='downloadTxt()'>
-          </td>
-        </tr>
-      </tbody>
+        <tbody>
+            <tr id="buttonRow0">
+                <td id='resumeButton' onclick='resume()'>
+                </td>
+            </tr>
+            <tr id="buttonRow">
+                <td id='resetButton' onclick="reset()">
+                </td>
+            </tr>
+        </tbody>
     </table>
-  </div>
-  <div class="style4" id="resultField" style="text-align:center;">
-  </div>
-  <table id="buttonsTable" align="center" width="450" height='200'>
-    <tbody>
-      <tr id="buttonRow0">
-        <td id='resumeButton' onclick='resume()'>
-        </td>
-      </tr>
-      <tr id="buttonRow">
-        <td id='resetButton' onclick="reset()">
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <canvas id='topTen' width="900" height="2525"></canvas>
+    <canvas id='topTen' width="900" height="2525"></canvas>
 </body>
 
 </html>
